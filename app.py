@@ -9,15 +9,15 @@ app = Flask(__name__)
 def add_numbers():
     """ Add a and b and return result as HTML string """
 
-    a = int(request.args.get["a"])
-    b = int(request.args.get["b"])
+    a = int(request.args["a"])
+    b = int(request.args["b"])
 
     result = operations.add(a, b)
 
     return f"""
       <html>
         <body>
-          <h1>Results: a + b = {result}</h1>
+          <h1>Results: {result}</h1>
         </body>
       </html>
       """
